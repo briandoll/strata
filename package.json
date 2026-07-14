@@ -24,7 +24,8 @@
   "scripts": {
     "build": "esbuild src/index.js --bundle --format=esm --outfile=dist/strata.esm.js && esbuild src/index.js --bundle --format=esm --minify --outfile=dist/strata.min.js && esbuild src/index.js --bundle --format=iife --outfile=dist/strata.global.js",
     "test": "node test/basic.test.mjs",
-    "demo": "python3 -m http.server 8080"
+    "demo": "python3 -m http.server 8080",
+    "prepublishOnly": "npm run build && npm test"
   },
   "keywords": [
     "summary",
