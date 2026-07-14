@@ -42,10 +42,17 @@ entirely, the dots still work.
 
 ## Quick start
 
-### CDN (no build step)
+Strata ships as a prebuilt bundle in [`dist/`](./dist), served straight from GitHub by
+[jsDelivr](https://www.jsdelivr.com/) — no build step and no npm install.
+
+### Drop-in component (CDN)
+
+Load the script and use `<strata-text>`. Loading it registers the element; that's the
+whole install.
 
 ```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/strata-text@0/dist/strata.min.js"></script>
+<script type="module"
+  src="https://cdn.jsdelivr.net/gh/briandoll/strata@v0.1.0/dist/strata.min.js"></script>
 
 <strata-text>
   <template data-strata-level="1">The one-sentence version.</template>
@@ -56,21 +63,12 @@ entirely, the dots still work.
 </strata-text>
 ```
 
-Loading the script registers `<strata-text>`. That's the whole install for the
-drop-in path.
+`@v0.1.0` pins a released tag. Bump it to load a newer version; use `@latest` to always
+track the newest release (handy for demos, riskier for production).
 
-### npm
+### Attribute mode (CDN)
 
-```bash
-npm install strata-text
-```
-
-```js
-import { Strata } from 'strata-text';
-
-// Attribute mode: enhance every [data-strata] container on the page.
-Strata.init();
-```
+To enhance markup you already have, import `Strata` and call `init()`:
 
 ```html
 <article data-strata>
@@ -80,7 +78,20 @@ Strata.init();
   <h1>Your headline</h1>
   <p>Your full article…</p>
 </article>
+
+<script type="module">
+  import { Strata } from 'https://cdn.jsdelivr.net/gh/briandoll/strata@v0.1.0/dist/strata.min.js';
+  Strata.init();
+</script>
 ```
+
+### Self-host
+
+Prefer not to depend on a CDN? Copy one file out of [`dist/`](./dist) into your project:
+
+- `dist/strata.min.js` — ES module (use with `<script type="module">` or `import`).
+- `dist/strata.global.js` — classic script that sets `window.Strata`; works with a plain
+  `<script src="…">` tag and over `file://`, no module server required.
 
 ---
 
@@ -179,6 +190,20 @@ gesture support means a slightly less magical experience, not a broken one.
   (rather than whole-piece) summarization.
 
 ---
+
+## Development
+
+The source is in [`src/`](./src); the browser bundles in [`dist/`](./dist) are built
+from it and committed so the CDN can serve them.
+
+```bash
+npm install      # dev tooling only (esbuild + jsdom)
+npm run build    # rebuild dist/ after editing src/
+npm test         # jsdom test suite
+npm run demo     # serve locally, then open http://localhost:8080/demo/
+```
+
+If you change anything in `src/`, run `npm run build` and commit the updated `dist/`.
 
 ## Contributing
 
