@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strata · attribute (progressive enhancement) example</title>
+  <script src="../dist/strata.global.js"></script>
+  <style>
+    body { max-width: 40rem; margin: 3rem auto; padding: 0 1.25rem;
+           font: 1.05rem/1.6 Georgia, serif; color: #1c1c1c; }
+    h1 { line-height: 1.2; font-family: system-ui, sans-serif; }
+    .hint { color: #666; font-size: .9rem; font-family: system-ui, sans-serif; }
+  </style>
+</head>
+<body>
+  <p class="hint">Same behavior, but enhancing plain markup you already have. With JS off, the full article below just renders normally.</p>
+
+  <article data-strata data-strata-initial="3">
+    <template data-strata-level="1" data-strata-source="ai-assisted">
+      Progressive enhancement means the full article is the real page; Strata layers the shorter levels on top.
+    </template>
+    <template data-strata-level="2" data-strata-source="ai-assisted">
+      <p>
+        In attribute mode you add <code>data-strata</code> to a container and drop your
+        summary levels into <code>&lt;template&gt;</code> tags. The full content stays as
+        ordinary HTML, so search engines and no-JS readers get the complete piece with no
+        duplication.
+      </p>
+    </template>
+
+    <h1>Enhancing markup you already have</h1>
+    <p>
+      This article is written the way any article is written: headings and paragraphs of plain
+      HTML. Nothing about it depends on JavaScript to be readable. That's the point of
+      progressive enhancement — the baseline works for everyone.
+    </p>
+    <p>
+      Strata finds the <code>data-strata</code> container after the page loads, tucks the full
+      content away as the deepest level, and wires up the shorter levels you provided. If the
+      script never runs, none of that happens and the reader simply reads the article.
+    </p>
+    <p>
+      Call <code>Strata.init()</code> to enhance every matching container, or pass a selector
+      and options to target specific ones. Everything else — the dots, the gestures, the
+      keyboard, the announcements — comes along for free.
+    </p>
+  </article>
+
+  <script>
+    // Attribute mode is opt-in: you decide when and what to enhance.
+    Strata.init({ initialLevel: 3 });
+  </script>
+</body>
+</html>

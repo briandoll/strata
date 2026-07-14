@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Strata · web component example</title>
+  <!-- Classic script so this file works when opened directly (file://) or served. -->
+  <script src="../dist/strata.global.js"></script>
+  <style>
+    body { max-width: 40rem; margin: 3rem auto; padding: 0 1.25rem;
+           font: 1.05rem/1.6 system-ui, sans-serif; color: #1c1c1c; }
+    h1 { line-height: 1.2; }
+    .hint { color: #666; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <p class="hint">Pinch (trackpad or touchscreen), tap the dots, or focus the article and use ← / →.</p>
+
+  <strata-text>
+    <template data-strata-level="1" data-strata-source="ai-assisted">
+      Strata lets a publisher ship one article at three approved depths and let readers pick.
+    </template>
+    <template data-strata-level="2" data-strata-source="ai-assisted">
+      <p>
+        Readers increasingly skim or lean on AI to summarize. Strata flips that around:
+        the publisher writes and approves a headline, a summary, and the full piece, then
+        ships all three so the reader chooses the level they want — by pinch, tap, or keyboard.
+      </p>
+    </template>
+
+    <h1>Let readers choose their depth</h1>
+    <p>
+      Attention spans are shrinking, and AI summarization is one tap away. A lot of readers
+      never reach the end of an article — they skim, or they paste it into a chatbot and read
+      whatever comes back. That summary is unreviewed, and it isn't yours.
+    </p>
+    <p>
+      Strata offers a different deal. You, the publisher, write the full piece by hand. With
+      an assistant's help you draft a one-sentence headline and a one-paragraph summary, then
+      you read them, fix them, and approve them. All three ship together inside the page.
+    </p>
+    <p>
+      The reader lands on the full article. If they're in a hurry they zoom out to the summary,
+      or all the way to the single sentence. If the sentence hooks them, they zoom back in. The
+      words are always yours — Strata only changes which layer is showing.
+    </p>
+  </strata-text>
+</body>
+</html>

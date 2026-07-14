@@ -1,0 +1,48 @@
+{
+  "name": "strata-text",
+  "version": "0.1.0",
+  "description": "Publish one article at three author-approved levels of detail. Let the reader pinch or tap to choose the depth.",
+  "type": "module",
+  "main": "dist/strata.global.js",
+  "module": "dist/strata.esm.js",
+  "unpkg": "dist/strata.min.js",
+  "jsdelivr": "dist/strata.min.js",
+  "exports": {
+    ".": {
+      "import": "./dist/strata.esm.js",
+      "default": "./dist/strata.global.js"
+    },
+    "./src": "./src/index.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "FORMAT.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --format=esm --outfile=dist/strata.esm.js && esbuild src/index.js --bundle --format=esm --minify --outfile=dist/strata.min.js && esbuild src/index.js --bundle --format=iife --outfile=dist/strata.global.js",
+    "test": "node test/basic.test.mjs",
+    "demo": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "summary",
+    "summarization",
+    "progressive-enhancement",
+    "reading",
+    "pinch-zoom",
+    "web-component",
+    "accessibility"
+  ],
+  "author": "Brian Doll",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.23.1",
+    "jsdom": "^29.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/briandoll/strata"
+  }
+}

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Strata — pinch to choose your depth</title>
+  <meta name="description" content="Strata lets a publisher ship one article at three approved depths and let readers pick by pinch, tap, or keyboard.">
+  <script src="../dist/strata.global.js"></script>
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 2.5rem 1.25rem 5rem;
+      font: 1.08rem/1.65 -apple-system, system-ui, "Segoe UI", sans-serif;
+      color: #1b1b1b; background: #faf9f7;
+      -webkit-font-smoothing: antialiased;
+    }
+    main { max-width: 38rem; margin: 0 auto; }
+    .masthead { text-align: center; margin-bottom: 2.5rem; }
+    .masthead .logo { font-weight: 800; letter-spacing: -.02em; font-size: 1.4rem; }
+    .masthead .tag { color: #6b6b6b; font-size: .95rem; margin-top: .35rem; }
+    .how {
+      background: #fff; border: 1px solid #eee; border-radius: 12px;
+      padding: .9rem 1.1rem; margin-bottom: 2.25rem; font-size: .92rem; color: #555;
+    }
+    .how b { color: #1b1b1b; }
+    article { color: #1b1b1b; }
+    article h1 { font-size: 1.7rem; line-height: 1.18; letter-spacing: -.02em; margin: .2rem 0 1rem; }
+    article p { margin: 0 0 1.15rem; }
+    /* Strata's dots inherit currentColor; give them a pleasant accent here. */
+    .strata-control { color: #c2410c; margin-bottom: 1.4rem; }
+    footer { max-width: 38rem; margin: 3rem auto 0; color: #8a8a8a; font-size: .85rem; text-align: center; }
+    a { color: #c2410c; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e6e3; background: #171614; }
+      .how { background: #201f1c; border-color: #2c2b28; color: #b5b2ad; }
+      .how b, article, article h1 { color: #f1efec; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="masthead">
+      <div class="logo">Strata</div>
+      <div class="tag">one article · three depths · your call</div>
+    </div>
+
+    <div class="how">
+      Tap the <b>dots</b> to change depth. On a trackpad or phone, <b>pinch</b> the article:
+      fingers together zooms out to the short version, fingers apart zooms back in. Keyboard:
+      focus the article and press <b>←</b> / <b>→</b>.
+    </div>
+
+    <article data-strata data-strata-initial="3">
+      <template data-strata-level="1" data-strata-source="ai-assisted">
+        Instead of letting readers guess or ask an AI, publishers can ship their own approved short, medium, and full versions of a piece and let each reader choose the depth.
+      </template>
+
+      <template data-strata-level="2" data-strata-source="ai-assisted">
+        <h1>Let the reader choose the depth</h1>
+        <p>
+          Attention is scarce and AI summaries are everywhere, so readers increasingly skim or
+          paste articles into a chatbot — reading a summary that's unreviewed and not the
+          publisher's own. Strata offers another path: the publisher writes the full piece, then
+          drafts and approves a one-sentence headline and a one-paragraph summary, and ships all
+          three together. The reader pinches, taps, or keys between them. The words are always the
+          author's; only the visible layer changes.
+        </p>
+      </template>
+
+      <h1>Let the reader choose the depth</h1>
+      <p>
+        Attention spans are shrinking. That isn't a moral failing on the reader's part — it's
+        the water we all swim in now. A person opens twenty tabs, skims six, and finishes one.
+        Publishers have responded with tricks: cramming the point into the first line, or writing
+        a "TL;DR" at the top. Useful, but blunt.
+      </p>
+      <p>
+        Meanwhile, AI summarization has become a one-tap habit. Readers drop an article into a
+        chatbot and read whatever comes back. It's fast, and often good enough. But that summary
+        has two problems. It's unreviewed — the model might get the emphasis wrong, or invent a
+        nuance you never wrote. And it isn't yours. Your voice, your framing, your judgment about
+        what matters most: all of it is quietly handed to a third party.
+      </p>
+      <p>
+        Strata proposes a different arrangement. You keep writing the full piece by hand, the way
+        you always have. Then, with an assistant's help, you draft two shorter versions: a single
+        sentence and a paragraph or two. Crucially, you read them. You fix the emphasis, cut the
+        line that isn't quite right, and approve them. They ship inside the same page as the full
+        article.
+      </p>
+      <p>
+        The reader arrives at the full text by default — nothing is hidden, and search engines see
+        the whole thing. If they're in a hurry, they zoom out: the article contracts to the
+        paragraph, then to the single sentence. If that sentence catches them, they zoom back in
+        and read the rest. It's the same gesture people already use on maps and photos, pointed at
+        prose.
+      </p>
+      <p>
+        The mechanism matters less than the principle. A pinch is delightful but optional; there's
+        always a visible control and a keyboard path, because hijacking the pinch gesture — the one
+        low-vision readers use to enlarge text — would be a hostile thing to do carelessly. So
+        Strata scopes its gesture to the article itself and leaves the rest of the page's zoom
+        alone.
+      </p>
+      <p>
+        What you end up with is a small act of respect. You're not deciding for the reader how much
+        of your work they'll consume. You're offering them a dial, clearly labeled, and standing
+        behind every position on it. The short version isn't a teaser designed to trap them; it's a
+        real, honest, author-approved version of the same idea.
+      </p>
+      <p>
+        There's a quieter benefit, too. Those approved summaries are structured data. A reading app,
+        an RSS feed, or yes, someone else's AI, could consume your headline and summary instead of
+        generating their own guess. You've written the canonical short version once, and it travels.
+      </p>
+      <p>
+        None of this replaces good writing. A muddy article summarized three ways is still muddy.
+        But for work worth reading closely, giving the reader a considered way in — and a considered
+        way out — feels like the rare interface change that's on the reader's side. That's the whole
+        pitch. Pinch, and see.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    Built with <a href="https://github.com/briandoll/strata">Strata</a> · MIT
+  </footer>
+
+  <script>Strata.init();</script>
+</body>
+</html>
