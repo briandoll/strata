@@ -43,6 +43,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/briandoll/strata"
+    "url": "git+https://github.com/briandoll/strata.git"
+  },
+  "homepage": "https://github.com/briandoll/strata#readme",
+  "bugs": {
+    "url": "https://github.com/briandoll/strata/issues"
   }
 }

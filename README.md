@@ -2,14 +2,12 @@
 
 **Publish one article at three author-approved levels of detail. Let the reader choose the depth.**
 
-*(Working name — see "Naming" below.)*
-
 Attention spans are shrinking and readers increasingly skim or ask an AI to summarize.
 Strata flips that around: instead of leaving the short version to chance, a publisher
 writes and approves their own **headline**, **summary**, and **full** versions of a
 piece, ships all three, and lets the reader pinch (or tap) between them.
 
-- **~5KB, zero dependencies.** Vanilla JS. Works with any stack that can serve HTML.
+- **~8KB minified (~3KB gzipped), zero dependencies.** Vanilla JS. Works with any stack that can serve HTML.
 - **Progressive enhancement.** The full article is the real page. With JS off, readers
   get everything and search engines see clean, un-duplicated content.
 - **The library never touches your words.** You author all three levels. Strata only
@@ -174,13 +172,6 @@ gesture support means a slightly less magical experience, not a broken one.
 
 ---
 
-## Naming
-
-`strata-text` is a placeholder. Candidates under consideration: **Précis**, **Strata**,
-**Pith**, **Lede**. The npm package and repo name will follow the final pick.
-
----
-
 ## Roadmap
 
 - v0.1 — core engine, visible control, both authoring modes, docs, demo.
@@ -191,8 +182,8 @@ gesture support means a slightly less magical experience, not a broken one.
 
 ## Contributing
 
-Early and rough. Issues and ideas welcome, especially real-device gesture reports
-(which iPhone, which browser, what felt off).
+Issues and pull requests welcome — especially real-device gesture reports: which
+iPhone, which browser, and what felt off.
 
 ## License
 

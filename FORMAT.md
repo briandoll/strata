@@ -1,6 +1,6 @@
 # The Intentional Summary Format
 
-**Version 0.1 (draft) · working name: Strata**
+**Version 0.1** · reference implementation: [Strata](./README.md)
 
 A small, framework-agnostic convention for publishing a single piece of writing at
 multiple author-approved levels of detail.
@@ -197,4 +197,4 @@ A **renderer** conforms if it:
 
 ---
 
-*Draft. Names and attribute spellings may change before 1.0. Feedback welcome.*
+*This is a v0.1 specification. Attribute names may evolve before 1.0; changes will be noted here. Feedback welcome.*
